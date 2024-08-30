@@ -8,8 +8,8 @@ a1: main
 main: main.o
 	$(GCC) main.o -o main
 
-main.o: main.c
-	$(GCC) main.c -c main.o -o main
+main.o: src/main.c
+	$(GCC) -c src/main.c -o main.o
 
 testall: test1 test2 test3 test4 test5 test6
 
@@ -38,4 +38,4 @@ test6:
 	diff output6.txt tests/expected6.txt
 
 clean:
-	rm *.o main output*
+	rm -f *.o main output*

@@ -13,11 +13,11 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-    get_combination(cents);
+    get_combinations(cents);
     return EXIT_SUCCESS;
 }
 
-void get_combination(int cents) {
+void get_combinations(int cents) {
     // Variable Declarations
     int money_arr[4];
     int temp_cents_1 = cents;
