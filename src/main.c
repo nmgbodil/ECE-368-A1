@@ -8,6 +8,7 @@ int main(void) {
     // Get inputs
     printf("Enter the number of cents -> ");
     rtv = scanf("%d", &cents);
+    printf("\n");
 
     if (!rtv) {
         return EXIT_FAILURE;
@@ -19,32 +20,29 @@ int main(void) {
 
 void get_combinations(int cents) {
     // Variable Declarations
-    int money_arr[4];
-    int temp_cents_1 = cents;
+    int money_arr[4] = {1, 1, 1, 1};
+    int temp_cents_1;
     int temp_cents_2;
     int temp_cents_3;
 
-    // Get number of quarters
-    while (temp_cents_1 > 0) {
-        money_arr[0] = temp_cents_1 / QUARTER;
-        temp_cents_1 -= QUARTER * money_arr[0];
+    money_arr[0] = cents / QUARTER; // Get number of quarters
 
-        // Get number of dimes
-        while (temp_cents_1 > 0) {
-            money_arr[1] = temp_cents_1 / DIME;
+    do {
+        temp_cents_1 = cents - QUARTER * money_arr[0];
+        money_arr[1] = temp_cents_1 / DIME; // Get number of dimes
+
+        while (money_arr[1] >= 0) {
             temp_cents_2 = temp_cents_1 - DIME * money_arr[1];
+            money_arr[2] = temp_cents_2 / NICKEL; // Get number of nickels
 
-            // Get number of nickels
-            while (temp_cents_2 > 0) {
-                money_arr[2] = temp_cents_2 / NICKEL;
+            while (money_arr[2] >= 0) {
                 temp_cents_3 = temp_cents_2 - NICKEL * money_arr[2];
-
-                // Get number of pennies
-                while (temp_cents_3 > 0) {
-                    money_arr[3] = temp_cents_3 / PENNY;
-                    printf("%d quarter(s), %d dime(s), %d nickel(s), %d pennies(s)\n", money_arr[0], money_arr[1], money_arr[2], money_arr[3]);
-                }
+                money_arr[3] = temp_cents_3 / PENNY; // Get number of pennies
+                printf("%d quarter(s), %d dime(s), %d nickel(s), %d pennie(s)\n", money_arr[0], money_arr[1], money_arr[2], money_arr[3]);
+                money_arr[2]--;
             }
+            money_arr[1]--;
         }
-    }
+        money_arr[0]--;
+    } while (money_arr[0] >= 0);
 }
