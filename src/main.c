@@ -6,7 +6,6 @@ int main(void) {
     int rtv;
 
     // Get inputs
-    printf("Enter the number of cents -> ");
     rtv = scanf("%d", &cents);
     printf("\n");
 
