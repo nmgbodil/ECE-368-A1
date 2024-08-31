@@ -7,7 +7,6 @@ int main(void) {
 
     // Get inputs
     rtv = scanf("%d", &cents);
-    printf("\n");
 
     if (!rtv) {
         return EXIT_FAILURE;
