@@ -1,18 +1,18 @@
 #include "def.h"
 
-int main(void) {
+int main(int argc, char** argv) {
     // Variable Declarations
-    int cents;
-    int rtv;
+    // int cents;
+    // int rtv;
 
     // Get inputs
-    rtv = scanf("%d", &cents);
+    // rtv = scanf("%d", &cents);
 
-    if (!rtv) {
-        return EXIT_FAILURE;
-    }
+    // if (!rtv) {
+    //     return EXIT_FAILURE;
+    // }
 
-    get_combinations(cents);
+    get_combinations(atoi(argv[1]));
     return EXIT_SUCCESS;
 }
 
