@@ -1,4 +1,3 @@
-Enter the number of cents -> 
 1 quarter(s), 1 dime(s), 0 nickel(s), 2 pennie(s)
 1 quarter(s), 0 dime(s), 2 nickel(s), 2 pennie(s)
 1 quarter(s), 0 dime(s), 1 nickel(s), 7 pennie(s)
