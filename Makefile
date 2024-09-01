@@ -3,13 +3,11 @@ ERROR = -Wvla -Werror
 GCC =gcc -std=c99 -g $(WARNING) $(ERROR)
 
 
-a1: main
+a1: a1.o
+	$(GCC) a1.o -o a1
 
-main: main.o
-	$(GCC) main.o -o main
-
-main.o: src/main.c
-	$(GCC) -c src/main.c -o main.o
+a1.o: src/main.c
+	$(GCC) -c src/main.c -o a1.o
 
 testall: test1 test2 test3 test4 test5 test6
 
@@ -38,4 +36,4 @@ test6:
 	diff tests/expected6.txt output6.txt
 
 clean:
-	rm -f *.o main output*
+	rm -f *.o a1 output*
