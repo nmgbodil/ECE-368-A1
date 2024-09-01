@@ -25,7 +25,7 @@ void get_combinations(int cents) {
 
     money_arr[0] = cents / QUARTER; // Get number of quarters
 
-    do {
+    while (money_arr[0] >= 0) {
         temp_cents_1 = cents - QUARTER * money_arr[0];
         money_arr[1] = temp_cents_1 / DIME; // Get number of dimes
 
@@ -42,5 +42,5 @@ void get_combinations(int cents) {
             money_arr[1]--;
         }
         money_arr[0]--;
-    } while (money_arr[0] >= 0);
+    }
 }
